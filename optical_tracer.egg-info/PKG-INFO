@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: optical-tracer
+Version: 0.0.1
+Summary: The system detects and tracks characteristic moving objects from the video, and traces their movement to create a 3D graph.
+Home-page: https://github.com/pokurin123/optical_tracer
+Author: pokurin123
+Author-email: s1922074@stu.musashino-u.ac.jp
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Framework :: Matplotlib
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown

@@ -1,53 +1,74 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-from __future__ import absolute_import
-from __future__ import unicode_literals
-import os
 
-from setuptools import setup, find_packages
+# from __future__ import absolute_import
+# from __future__ import unicode_literals
+# import os
 
-try:
-    with open('README.rst') as f:
-        readme = f.read()
-except IOError:
-    readme = ''
+# from setuptools import setup, find_packages
 
-def _requires_from_file(filename):
-    return open(filename).read().splitlines()
+# try:
+#     with open('README.rst') as f:
+#         readme = f.read()
+# except IOError:
+#     readme = ''
 
-# version
-here = os.path.dirname(os.path.abspath(__file__))
-version = next((line.split('=')[1].strip().replace("'", '')
-                for line in open(os.path.join(here,
-                                              'pypipkg',
-                                              '__init__.py'))
-                if line.startswith('__version__ = ')),
-               '0.0.dev0')
+# def _requires_from_file(filename):
+#     return open(filename).read().splitlines()
 
-setup(
-    name="pypipkg",
-    version=version,
-    url='https://github.com/user/pypipkg',
-    author='kinpira',
-    author_email='kinpira@example.jp',
-    maintainer='kinpira',
-    maintainer_email='kinpira@example.jp',
-    description='Package Dependency: Validates package requirements',
-    long_description=readme,
-    packages=find_packages(),
-    install_requires=_requires_from_file('requirements.txt'),
+# # version
+# here = os.path.dirname(os.path.abspath(__file__))
+# version = next((line.split('=')[1].strip().replace("'", '')
+#                 for line in open(os.path.join(here,
+#                                               'pypipkg',
+#                                               '__init__.py'))
+#                 if line.startswith('__version__ = ')),
+#                '0.0.dev0')
+
+# setup(
+#     name="optical_tracer",
+#     version=version,
+#     url='https://github.com/pokurin123/optical_tracer',
+#     author='pokurin123',
+#     author_email='s1922074@stu.musashino-u.ac.jp',
+#     maintainer='pokurin123',
+#     maintainer_email='s1922074@stu.musashino-u.ac.jp',
+#     description='The system detects and tracks characteristic moving objects from the video, and traces their movement to create a 3D graph.',
+#     long_description=readme,
+#     packages=find_packages(),
+#     install_requires=_requires_from_file('requirements.txt'),
+#     license="MIT",
+#     classifiers=[
+#         'Framework :: Matplotlib',
+#         'Programming Language :: Python :: 3.8',
+#         'License :: OSI Approved :: MIT License',
+#     ],
+#     entry_points={
+#         'console_scripts': [
+#             "optical_tracer=optical_tracer.main:main"
+#         ]
+#     },
+# )
+
+import setuptools
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="optical_tracer",
+    version="0.0.1",
+    author="pokurin123",
+    author_email="s1922074@stu.musashino-u.ac.jp",
+    description="The system detects and tracks characteristic moving objects from the video, and traces their movement to create a 3D graph.",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/pokurin123/optical_tracer",
+    packages=setuptools.find_packages(),
     license="MIT",
     classifiers=[
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Framework :: Matplotlib',
+        'Programming Language :: Python :: 3.8',
         'License :: OSI Approved :: MIT License',
     ],
-    entry_points="""
-      # -*- Entry points: -*-
-      [console_scripts]
-      pkgdep = pypipkg.scripts.command:main
-    """,
 )
