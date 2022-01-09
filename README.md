@@ -2,7 +2,7 @@
 It extracts feature points from the video and traces their movements in the video.  
 After the video is stopped, a 3D graph of those movements is generated with the X axis as the X coordinate, the Y axis as the Y coordinate, and the Z axis as the time.
 
-![image](./docs/images/スクリーンショット%202022-01-10%204.37.33.png)
+![image](./docs/images/image.png)
 
 # PIP
 
