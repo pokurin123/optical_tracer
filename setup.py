@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="optical_tracer",
-    version="0.1.8",
+    version="0.1.9",
     author="pokurin123",
     author_email="s1922074@stu.musashino-u.ac.jp",
     description="The system detects and tracks characteristic moving objects from the video, and traces their movement to create a 3D graph.",

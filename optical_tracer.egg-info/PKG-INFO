@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: optical-tracer
-Version: 0.1.8
+Version: 0.1.9
 Summary: The system detects and tracks characteristic moving objects from the video, and traces their movement to create a 3D graph.
 Home-page: https://github.com/pokurin123/optical_tracer
 Author: pokurin123
@@ -10,7 +10,7 @@ Description: # optical_tracer
         It extracts feature points from the video and traces their movements in the video.  
         After the video is stopped, a 3D graph of those movements is generated with the X axis as the X coordinate, the Y axis as the Y coordinate, and the Z axis as the time.
         
-        ![image](/docs/images/スクリーンショット%202022-01-10%204.37.33.png)
+        <!-- ![image](docs/images/image.png) -->
         
         # PIP
         
