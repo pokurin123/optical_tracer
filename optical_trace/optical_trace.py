@@ -21,15 +21,25 @@ def opt_trace(video_path,maxC,qualitylv,minDist,xrange,yrange):
         ft1 = cv2.goodFeaturesToTrack(
             gray1, mask=None, **ft_params)
 
+        li = []
         if not xrange == "none" and not yrange == "none":
-            ftt = ft1[0]
-            ft1 = np.array([ftt[(xrange[0] < ftt[:,0] < xrange[1]) & (yrange[0] < ftt[:,1] < yrange[1])]])
+            for i in list(range(0,len(ft1[:,0]))):
+                ftt = list(ft1[:,0][i])
+                if xrange[0] < ftt[0] < xrange[1] and yrange[0] < ftt[1] < yrange[1]:
+                    li.append([ftt])
+            ft1 = np.array(li)
         elif not xrange == "none" and yrange == "none":
-            ftt = ft1[0]
-            ft1 = np.array([ftt[(xrange[0] < ftt[:,0] < xrange[1])]])
+            for i in list(range(0,len(ft1[:,0]))):
+                ftt = list(ft1[:,0][i])
+                if xrange[0] < ftt[0] < xrange[1]:
+                    li.append([ftt])
+            ft1 = np.array(li)
         elif xrange == "none" and not yrange == "none":
-            ftt = ft1[0]
-            ft1 = np.array([ftt[(yrange[0] < ftt[:,1] < yrange[1])]])
+            for i in list(range(0,len(ft1[:,0]))):
+                ftt = list(ft1[:,0][i])
+                if yrange[0] < ftt[1] < yrange[1]:
+                    li.append([ftt])
+            ft1 = np.array(li)
 
         coord_list = []
         for i in range(len(ft1)):
@@ -42,7 +52,7 @@ def opt_trace(video_path,maxC,qualitylv,minDist,xrange,yrange):
             co_ = co/255
             return co_
 
-        color_list = [[0,0,255],[0,255,0],[255,0,0],[255,0,255],[255,255,0],[0,255,255],[255,111,111]]
+        color_list = [[0,0,255],[0,255,0],[255,0,0],[255,0,255],[255,255,0],[0,255,255],[255,111,111],[111,255,111],[111,111,255],[111,111,111]]
         color_box = []
         for i in range(len(ft1)):
             color_ = reversed(list(map(col_rgb,color_list[i])))
